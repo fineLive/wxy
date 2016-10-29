@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.helloOne.sys.dao.UserDao">
+
+	<select id="findAll"  resultType="com.helloOne.sys.entity.User">
+		SELECT * from user
+	</select>
+	
+	<insert id="insert" parameterType="com.helloOne.sys.entity.User">
+	insert into user
+	(id,
+	name,
+	password,
+	create_time,
+	update_time,
+	del_flag,
+	email,
+	avatar)
+	values 
+	(#{id},
+	#{name},
+	#{password},
+	#{createTime},
+	#{updateTime},
+	#{delFlag},
+	#{email},
+	#{avatar}
+	)
+	</insert>
+
+
+</mapper> 
